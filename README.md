@@ -16,12 +16,14 @@ port: 2220
 
 ```bash
 cat readme
+#boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 ```
 
 ### Solution 1
 
 ```bash
 cat ./-
+#CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
 
 
@@ -30,6 +32,7 @@ cat ./-
 
 ```bash
 cat 'spaces in this filename'
+#UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 
 
@@ -37,23 +40,17 @@ cat 'spaces in this filename'
 ### Solution 3
 
 ```bash
-cat .hidden
+cat ~/inhere/.hidden
+#UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 
 
 
-### Solution 4
+
+### Solution 4
 
 ```bash
-cat .hidden
-```
-
-
-
-### Solution 5
-
-```bash
-find . | xargs file
+find ~/inhere/ | xargs file
 ```
 
 ```bash
@@ -71,5 +68,49 @@ find . | xargs file
 ```
 
 ```bash
-cat ./-file07
+cat ~/inhere/-file07
+#koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
+
+### Solution 5
+
+```bash
+cat $(find ~/inhere/* -size 1033c)
+#DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
+
+### Solution 6
+
+```bash
+cat $(find / -group bandit6 -user bandit7 2>/dev/null)
+#HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+```
+
+### Solution 7
+
+```bash
+cat data.txt |grep millionth | awk {print $2}
+#cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+```
+
+### Solution 8
+
+```bash
+sort ~/data.txt | uniq -u
+# UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
+
+
+
+### Solution 9
+
+```bash
+bandit9@bandit:~$ strings ~/data.txt |grep '=='
+========== the*2i"4
+========== password
+Z)========== is
+&========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+#pour récupérer précisemment cette ligne
+strings ~/data.txt |grep '&==' | awk '{print $2}'
+```
+
