@@ -1,9 +1,10 @@
 # bandit
-automating the resolution of bandit challenges from https://overthewire.org/wargames/bandit/
+automatisation de la résolution des challenges bandit, provenant du site overthewire
+https://overthewire.org/wargames/bandit/
 
 ## Exercice 0
 
-Les identifiants du premier challenge sont donnée sur la page, les paramètres de connexion aussi:
+Les identifiants du premier challenge sont donnés sur la page, les paramètres de connexion aussi:
 
 ```bash
 username: bandit0
@@ -26,8 +27,6 @@ cat ./-
 #CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
 
-
-
 ### Solution 2
 
 ```bash
@@ -35,16 +34,12 @@ cat 'spaces in this filename'
 #UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
 
-
-
 ### Solution 3
 
 ```bash
 cat ~/inhere/.hidden
 #UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
-
-
 
 
 ### Solution 4
@@ -100,8 +95,6 @@ sort ~/data.txt | uniq -u
 # UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
 
-
-
 ### Solution 9
 
 ```bash
@@ -110,7 +103,7 @@ bandit9@bandit:~$ strings ~/data.txt |grep '=='
 ========== password
 Z)========== is
 &========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
-#pour récupérer précisemment cette ligne
+#pour récupérer précisement cette ligne
 strings ~/data.txt |grep '&==' | awk '{print $2}'
 ```
 
