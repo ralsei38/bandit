@@ -14,14 +14,6 @@ async def run_client(name, passwd, cmd):
         return result
 
 
-def print_logins(cmds, bandit_passwords):
-    for i in range(0, len(cmds)):
-        print(f"user: bandit{i}")
-        print(f"cmd: {cmds[i]}")
-        print(f"password: {bandit_passwords[i]}")
-        print("---")
-
-
 bandit_passwords = ["bandit0"]
 cmds = [
     "cat readme",
@@ -30,16 +22,20 @@ cmds = [
     "cat ~/inhere/.hidden",
     "cat ~/inhere/-file07",
     "cat $(find ~/inhere/* -size 1033c)",
+    "cat $(find / -group bandit6 -user bandit7 2>/dev/null)",
+    "cat data.txt |grep millionth | awk '{print $2}'",
+    "sort ~/data.txt | uniq -u",
+    "strings ~/data.txt |grep '&==' | awk '{print $2}'",
 ]
 
 try:
-    for i in range(0, (len(cmds) - 1)):
+    for i in range(0, (len(cmds))):
         username = "bandit" + str(i)
         result = asyncio.get_event_loop().run_until_complete(
             run_client(username, bandit_passwords[i], cmds[i])
         )
         bandit_passwords.append(result.stdout.strip())
-    print_logins(cmds, bandit_passwords)
+        print(f" level {i} passed, password: {result.stdout.strip()}")
 
 except (OSError, asyncssh.Error) as exc:
     sys.exit("SSH connection failed: " + str(exc))
