@@ -2,7 +2,7 @@
 automatisation de la résolution des challenges bandit, provenant du site overthewire
 https://overthewire.org/wargames/bandit/
 
-## Exercice 0
+### Start
 
 Les identifiants du premier challenge sont donnés sur la page, les paramètres de connexion aussi:
 
